@@ -1,0 +1,15 @@
+# ignite the react app
+package json is configuratoin for npm
+
+npm install -D parcel
+-D stand for dev dependency : generally required for developement of the application
+
+transitive dependencies : dependecies that dependent on each other
+npm - calling command the npm [to install the package]
+npx - executing the package
+
+npm install react
+npm install react-dom
+
+HMR - HOT MODULE RELOADING
+CONSISTENT HASHING

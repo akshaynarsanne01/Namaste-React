@@ -1,10 +1,5 @@
-const parent = React.createElement(
-  <div className="parent_class">
-    <div childClass="child_class">
-      <h1>this it html tag</h1>
-    </div>
-  </div>
-);
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 const heading = React.createElement(
   "h1",
@@ -12,4 +7,4 @@ const heading = React.createElement(
   "this is hello world from"
 );
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(heading);
