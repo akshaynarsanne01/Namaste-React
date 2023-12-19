@@ -13,3 +13,14 @@ npm install react-dom
 
 HMR - HOT MODULE RELOADING
 CONSISTENT HASHING
+
+
+//ep 03
+
+babel converts the jsx to react object
+<Component/> this is syntax for rendering component
+
+this all three things are one and same for rendering component
+    {TitleHeading()} 
+    <TitleHeading />
+    <TitleHeading></TitleHeading> 
