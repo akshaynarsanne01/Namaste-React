@@ -1,21 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+export const GITHUB = require("./Images/github.svg");
+export const LINKEDIN = require("./Images/LinkedIn.svg");
+export const INSTAGRAM = require("./Images/instagram.svg");
+export const RATINGSVG = require("./Images/raing.svg");
 
-const logo = require("./Images/images.png");
-const TitleHeading = () => (
-  <div className="flex bg-[#ccc3ab] text-white text-lg">
-    {/* <img className="flex-none w-24" src={logo} /> */}
-    <ul className="flex flex-wrap justify-center items-center m-auto p-4">
-      <li className=" p-4 hover:text-[#824667] cursor-pointer">Home</li>
-      <li className=" p-4 hover:text-[#824667] cursor-pointer">About Me</li>
-      <li className=" p-4 hover:text-[#824667] cursor-pointer">Contact Me</li>
-      <li className=" p-4 hover:text-[#824667] cursor-pointer">Cart</li>
-    </ul>
-  </div>
-);
-
-// RestaurantList is JSON Data for displaying cards
-const restaurantList = [
+export const restaurantLists = [
   {
     type: "restaurant",
     data: {
@@ -1832,90 +1820,3 @@ const restaurantList = [
     subtype: "basic",
   },
 ];
-const ratingSvg = require("./Images/raing.svg");
-const CardRes = (props) => {
-  const { name, cloudinaryImageId, cuisines, avgRating, deliveryTime, area } =
-    props?.resObj?.data;
-  return (
-    <div className="border w-60 m-4 rounded-lg shadow-lg hover:cursor-pointer">
-      <img
-        className="w-full p-1 rounded-lg"
-        src={
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          cloudinaryImageId
-        }
-      />
-      <div className="m-4">
-        <h1 className="mt-2 mb-1 h-7 text-xl overflow-hidden">{name}</h1>
-        <div className="flex justify-content space">
-          <img className="w-4" src={ratingSvg} />
-          <span className="ml-1 text-lg">{avgRating}</span>
-          <span className="ml-3 text-lg "> • {deliveryTime} Mins</span>
-        </div>
-        <h3>{cuisines.join(", ")}</h3>
-      </div>
-    </div>
-  );
-};
-
-const SearchComponent = () => {
-  return (
-    <div className="flex justify-center p-2 space-2">
-      <input className="border rounded-lg " placeholder="  Search...." />
-      <button
-        className="p-2 border-spacing-2 border-2 rounded-lg border-slate-400 hover:bg-2 hover:bg-[#c9c0a5]"
-        type="submit"
-      >
-        Search
-      </button>
-    </div>
-  );
-};
-const Body = () => {
-  return (
-    <div className="w-full h-screen overflow-y-visible overflow-x-hidden">
-      <SearchComponent />
-      <div className="flex flex-wrap justify-center p-8">
-        {restaurantList.map((restroCard) => (
-          <CardRes key={restroCard.data.id} resObj={restroCard} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const github = require("./Images/github.svg");
-const linkedin = require("./Images/LinkedIn.svg");
-const instagram = require("./Images/instagram.svg");
-const FooterComponent = () => {
-  return (
-    <div className="h-24 rounded-lg   bg-[#ccc3ab]">
-      <div className="flex justify-center	space-x-3 p-3">
-        <a target="_blank" href="https://github.com/akshaynarsanne01">
-          <img className="w-10" src={github}></img>
-        </a>
-        <a target="_blank" href="https://www.linkedin.com/in/akshaynarsanne/">
-          <img className="w-10" src={linkedin}></img>
-        </a>
-        <a target="_blank" href="">
-          <img className="w-10" src={instagram}></img>
-        </a>
-      </div>
-      <div className="flex justify-center">
-        <h3>© 2023 Akshay Narsanne. All rights reserved.</h3>
-      </div>
-    </div>
-  );
-};
-
-const AppComponent = () => {
-  return (
-    <>
-      <TitleHeading></TitleHeading>
-      <Body></Body>
-      <FooterComponent></FooterComponent>
-    </>
-  );
-};
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppComponent />);
