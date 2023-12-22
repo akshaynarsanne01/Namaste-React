@@ -1,6 +1,7 @@
 import CardRes from "../components/Restrocard";
 import { restaurantLists } from "../utils/constants";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 const SearchComponent = () => {
   return (
     <div className="flex justify-center p-2 space-2">
@@ -21,8 +22,21 @@ const SearchComponent = () => {
 const Body = () => {
   // first hook use state
   // it is like global variable in react
-  const [restaurantList, setRestaurantList] = useState(restaurantLists);
-  return (
+
+  const [restaurantList, setRestaurantList] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch("http://localhost:3000/");
+    const json = await data.json();
+    setRestaurantList(json);
+  };
+  return restaurantList.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="w-full h-full">
       <SearchComponent />
       <div className="flex justify-center border-solid border-black">
