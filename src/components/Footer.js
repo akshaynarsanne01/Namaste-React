@@ -3,7 +3,7 @@ import { LINKEDIN } from "../utils/constants";
 import { GITHUB } from "../utils/constants";
 const FooterComponent = () => {
   return (
-    <div className="h-24 rounded-lg   bg-[#ccc3ab]">
+    <div className="h-24 rounded-xl   bg-[#ccc3ab]">
       <div className="flex justify-center	space-x-3 p-3">
         <a target="_blank" href="https://github.com/akshaynarsanne01">
           <img className="w-10" src={GITHUB}></img>
